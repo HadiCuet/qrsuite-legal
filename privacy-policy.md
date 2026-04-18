@@ -135,7 +135,7 @@ QRsuite is not directed at children under 13. We don't knowingly collect data fr
 
 ## 10. Changes to this policy
 
-If we change this policy, the new version will replace this page at **{{POLICY_URL}}** and the "Effective date" at the top will be updated. Material changes (e.g. a new third-party service, a new category of data) will be called out in the app's release notes.
+If we change this policy, the new version will replace this page at **https://hadicuet.github.io/qrsuite-legal/** and the "Effective date" at the top will be updated. Material changes (e.g. a new third-party service, a new category of data) will be called out in the app's release notes.
 
 ---
 
