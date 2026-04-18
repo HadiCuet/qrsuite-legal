@@ -129,7 +129,7 @@
 <hr>
 
 <h2>1. Who we are</h2>
-<p>QRsuite is an iOS app for scanning and generating QR codes and barcodes. It is developed and operated by <strong>Abdullah Al Hadi</strong> ("we", "us"). For any privacy questions, contact us at <strong>hadi.fiftytwo@gmail.com</strong>.</p>
+<p>QRsuite is an iOS app for scanning and generating QR codes and barcodes. It is developed and operated by <strong>Abdullah Al Hadi</strong> ("we", "us"). For the purposes of the EU / UK / EEA General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA/CPRA), Abdullah Al Hadi is the <strong>data controller</strong> for personal data collected through the QRsuite app. For any privacy questions, contact us at <strong>hadi.fiftytwo@gmail.com</strong>.</p>
 <p>This policy covers the QRsuite iOS app and its bundled extensions (Widget and Share Extension).</p>
 
 <hr>
@@ -137,7 +137,7 @@
 <h2>2. Data we collect</h2>
 
 <h3>Stays only on your device — never sent anywhere</h3>
-<p>Everything below is stored locally in the app using Apple's SwiftData framework. It lives on your device (and, if you enable it, in your private iCloud backup). We have no access to any of it.</p>
+<p>Everything below is stored locally on your device using Apple's SwiftData framework. If you have iCloud Backup enabled on your iPhone, Apple includes this data in your encrypted iCloud backup — that backup is between you and Apple; we have no access to it.</p>
 <ul>
   <li><strong>Scan history</strong> — every QR or barcode you scan, including the decoded text, timestamp, and any folder, note, or favorite flag you attach to it.</li>
   <li><strong>Created QRs</strong> — QRs you generate, with their design settings and thumbnails.</li>
@@ -152,40 +152,21 @@
 
 <p><strong>Firebase Analytics</strong> collects:</p>
 <ul>
-  <li>Device identifiers that are scoped to this app only (Apple's IDFV, a Firebase installation ID). These cannot identify you across other apps.</li>
-  <li>Device type, OS version, app version, language, country (derived from IP).</li>
-  <li>A record of which screens you view.</li>
-  <li>The following specific events, so we can see which features people actually use and decide what to keep, fix, or cut:</li>
+  <li>Device identifiers scoped to this app only (Apple's IDFV, a Firebase installation ID). These cannot identify you across other apps.</li>
+  <li>Device type, OS version, app version, language, and country (derived from IP).</li>
+  <li>Which screens you view in the app.</li>
+  <li>Aggregate feature usage, so we can decide what to keep, fix, or cut:
+    <ul>
+      <li>The <em>type</em> of code you scan or create (URL, Wi-Fi, text, etc.) — never the content</li>
+      <li>Actions you take on a scan result (open, copy, share, add to contacts, etc.) — action name only</li>
+      <li>Which Pro-only features you attempt and which subscription plan you consider</li>
+      <li>Counts of operations on history, folders, templates, and notes (created, edited, deleted) — never the names or contents</li>
+      <li>Whether a scan or render attempt failed, with a generic reason (e.g. "no barcode found")</li>
+    </ul>
+  </li>
 </ul>
 
-<table>
-  <thead><tr><th>Event</th><th>What it means</th></tr></thead>
-  <tbody>
-    <tr><td><code>qr_scanned</code></td><td>A scan succeeded. Includes the type of code (url/wifi/text/etc) and the source (camera/gallery). Does <strong>not</strong> include the scanned text.</td></tr>
-    <tr><td><code>qr_created</code></td><td>A QR was generated. Includes the kind (url/wifi/etc). Does <strong>not</strong> include the payload.</td></tr>
-    <tr><td><code>qr_shared</code></td><td>A QR was shared. Includes kind and destination (system share / HD PNG / PDF).</td></tr>
-    <tr><td><code>qr_saved</code></td><td>A QR was saved to "My QRs". Includes kind.</td></tr>
-    <tr><td><code>scan_failed</code></td><td>A scan attempt failed. Includes the source and failure reason.</td></tr>
-    <tr><td><code>scan_action</code></td><td>A post-scan action (Open URL, Call, Copy password, Add to Contacts, etc.). Action name only — no payload.</td></tr>
-    <tr><td><code>pro_gate_bounced</code></td><td>A Pro-only feature was tapped without a Pro subscription. Feature name only.</td></tr>
-    <tr><td><code>pro_upgrade_tapped</code></td><td>The Pro upgrade button was tapped. Plan name (lifetime/yearly/monthly) only.</td></tr>
-    <tr><td><code>template_used</code></td><td>A saved template was applied. Template's random ID only — no name.</td></tr>
-    <tr><td><code>template_created</code></td><td>A new template was saved. Random ID only.</td></tr>
-    <tr><td><code>history_opened</code></td><td>The History tab was opened.</td></tr>
-    <tr><td><code>history_item_deleted</code></td><td>An item was deleted from history. Item kind only (scanned/created).</td></tr>
-    <tr><td><code>history_item_shared</code></td><td>A history item was shared. Item kind and destination.</td></tr>
-    <tr><td><code>history_item_reused</code></td><td>A created QR was reused in Create.</td></tr>
-    <tr><td><code>history_item_pinned</code></td><td>A QR was pinned or unpinned from the widget.</td></tr>
-    <tr><td><code>history_item_noted</code></td><td>A note was added, changed, or cleared on a history item. Note text is <strong>not</strong> included.</td></tr>
-    <tr><td><code>folder_created</code></td><td>A folder was created. Name is <strong>not</strong> included.</td></tr>
-    <tr><td><code>folder_renamed</code></td><td>A folder was renamed.</td></tr>
-    <tr><td><code>folder_deleted</code></td><td>A folder was deleted.</td></tr>
-    <tr><td><code>settings_changed</code></td><td>A preference changed (App Lock, appearance theme). Setting name and new value only.</td></tr>
-    <tr><td><code>history_cleared</code></td><td>The "Clear all history" action was used. Total count only.</td></tr>
-    <tr><td><code>app_lock_triggered</code></td><td>The biometric unlock prompt was shown.</td></tr>
-    <tr><td><code>screen_view</code></td><td>Automatic — fires each time you open a screen in the app.</td></tr>
-  </tbody>
-</table>
+<p><strong>We do NOT request App Tracking Transparency permission.</strong> Firebase Analytics, as we use it, does not collect your advertising identifier (IDFA) and cannot link you across other apps or websites.</p>
 
 <p><strong>What we do NOT send:</strong> the contents of any QR or barcode (scanned or created), the text of your notes, the names of your folders or templates, the contents of your photo library, any image bytes, any passwords, or any Wi-Fi credentials.</p>
 
@@ -214,12 +195,13 @@
   <li><strong>Firebase Analytics</strong> tells us which features are actually being used. We look at aggregate counts — not at individual users. The goal is to decide what to improve and what to remove.</li>
   <li><strong>Firebase Crashlytics</strong> tells us when and why the app crashes so we can fix the underlying bug.</li>
 </ul>
-<p>We do not sell your data. We do not share it with advertisers. We do not use it to build profiles across other apps.</p>
+<p>We do not sell your personal information, and we do not share it for cross-context behavioral advertising (as those terms are defined under the California Consumer Privacy Act). We do not share data with advertisers, and we do not build profiles across other apps.</p>
 
 <hr>
 
 <h2>5. Third parties</h2>
-<p>The only third-party service the app communicates with is <strong>Firebase</strong>, operated by Google LLC. Google processes Analytics and Crashlytics data as our service provider, under the <a href="https://firebase.google.com/terms/data-processing-terms">Firebase Data Processing Terms</a>. Google's own privacy practices are covered by the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+<p>The only third-party service the app communicates with is <strong>Firebase</strong>, operated by Google LLC. Google processes Analytics and Crashlytics data as our service provider, under the <a href="https://firebase.google.com/terms/data-processing-terms">Firebase Data Processing and Security Terms</a>. Google's own privacy practices are covered by the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+<p>Google primarily processes this data on servers located in the <strong>United States</strong>. For users in the EEA, UK, or Switzerland, international transfers rely on Google's Data Processing and Security Terms, which incorporate the European Commission's Standard Contractual Clauses and the UK International Data Transfer Addendum.</p>
 <p>No other third-party analytics, advertising, or tracking SDK is bundled in the app.</p>
 
 <hr>
@@ -239,6 +221,7 @@
   <li><strong>Turn off analytics system-wide</strong> — iOS <strong>Settings → Privacy &amp; Security → Analytics &amp; Improvements → Share iPhone Analytics</strong>. When this is off, Firebase still receives minimal crash data; you can prevent even that by uninstalling the app.</li>
   <li><strong>Access or erase your data</strong> under GDPR (EEA, UK), CCPA/CPRA (California), or similar laws — email <strong>hadi.fiftytwo@gmail.com</strong>. Because we don't tie analytics data to a persistent identity, the most reliable erasure is uninstalling the app, which invalidates the Firebase installation ID.</li>
   <li><strong>Opt out of analytics inside the app</strong> — not currently available as a per-app toggle. If you'd like one, email us and we'll prioritize it.</li>
+  <li><strong>Lodge a complaint</strong> — if you're in the EEA, UK, or Switzerland and believe we're mishandling your data, you have the right to complain to your local data protection authority. We'd appreciate the chance to address your concern first — email <strong>hadi.fiftytwo@gmail.com</strong> and we'll respond within 30 days.</li>
 </ul>
 
 <hr>

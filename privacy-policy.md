@@ -8,7 +8,7 @@ This policy explains what data QRsuite collects, why, and the choices you have. 
 
 ## 1. Who we are
 
-QRsuite is an iOS app for scanning and generating QR codes and barcodes. It is developed and operated by **Abdullah Al Hadi** ("we", "us"). For any privacy questions, contact us at **hadi.fiftytwo@gmail.com**.
+QRsuite is an iOS app for scanning and generating QR codes and barcodes. It is developed and operated by **Abdullah Al Hadi** ("we", "us"). For the purposes of the EU / UK / EEA General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA/CPRA), Abdullah Al Hadi is the **data controller** for personal data collected through the QRsuite app. For any privacy questions, contact us at **hadi.fiftytwo@gmail.com**.
 
 This policy covers the QRsuite iOS app and its bundled extensions (Widget and Share Extension).
 
@@ -18,7 +18,7 @@ This policy covers the QRsuite iOS app and its bundled extensions (Widget and Sh
 
 ### Stays only on your device — never sent anywhere
 
-Everything below is stored locally in the app using Apple's SwiftData framework. It lives on your device (and, if you enable it, in your private iCloud backup). We have no access to any of it.
+Everything below is stored locally on your device using Apple's SwiftData framework. If you have iCloud Backup enabled on your iPhone, Apple includes this data in your encrypted iCloud backup — that backup is between you and Apple; we have no access to it.
 
 - **Scan history** — every QR or barcode you scan, including the decoded text, timestamp, and any folder, note, or favorite flag you attach to it.
 - **Created QRs** — QRs you generate, with their design settings and thumbnails.
@@ -34,36 +34,17 @@ We use two Firebase services from Google to improve the app: **Analytics** and *
 
 **Firebase Analytics** collects:
 
-- Device identifiers that are scoped to this app only (Apple's IDFV, a Firebase installation ID). These cannot identify you across other apps.
-- Device type, OS version, app version, language, country (derived from IP).
-- A record of which screens you view.
-- The following specific events, so we can see which features people actually use and decide what to keep, fix, or cut:
+- Device identifiers scoped to this app only (Apple's IDFV, a Firebase installation ID). These cannot identify you across other apps.
+- Device type, OS version, app version, language, and country (derived from IP).
+- Which screens you view in the app.
+- Aggregate feature usage, so we can decide what to keep, fix, or cut:
+  - The *type* of code you scan or create (URL, Wi-Fi, text, etc.) — never the content
+  - Actions you take on a scan result (open, copy, share, add to contacts, etc.) — action name only
+  - Which Pro-only features you attempt and which subscription plan you consider
+  - Counts of operations on history, folders, templates, and notes (created, edited, deleted) — never the names or contents
+  - Whether a scan or render attempt failed, with a generic reason (e.g. "no barcode found")
 
-  | Event | What it means |
-  |---|---|
-  | `qr_scanned` | A scan succeeded. Includes the type of code (url/wifi/text/etc) and the source (camera/gallery). Does **not** include the scanned text. |
-  | `qr_created` | A QR was generated. Includes the kind (url/wifi/etc). Does **not** include the payload. |
-  | `qr_shared` | A QR was shared. Includes kind and destination (system share / HD PNG / PDF). |
-  | `qr_saved` | A QR was saved to "My QRs". Includes kind. |
-  | `scan_failed` | A scan attempt failed. Includes the source and failure reason. |
-  | `scan_action` | A post-scan action (Open URL, Call, Copy password, Add to Contacts, etc.). Action name only — no payload. |
-  | `pro_gate_bounced` | A Pro-only feature was tapped without a Pro subscription. Feature name only. |
-  | `pro_upgrade_tapped` | The Pro upgrade button was tapped. Plan name (lifetime/yearly/monthly) only. |
-  | `template_used` | A saved template was applied. Template's random ID only — no name. |
-  | `template_created` | A new template was saved. Random ID only. |
-  | `history_opened` | The History tab was opened. |
-  | `history_item_deleted` | An item was deleted from history. Item kind only (scanned/created). |
-  | `history_item_shared` | A history item was shared. Item kind and destination. |
-  | `history_item_reused` | A created QR was reused in Create. |
-  | `history_item_pinned` | A QR was pinned or unpinned from the widget. |
-  | `history_item_noted` | A note was added, changed, or cleared on a history item. Note text is **not** included. |
-  | `folder_created` | A folder was created. Name is **not** included. |
-  | `folder_renamed` | A folder was renamed. |
-  | `folder_deleted` | A folder was deleted. |
-  | `settings_changed` | A preference changed (App Lock, appearance theme). Setting name and new value only. |
-  | `history_cleared` | The "Clear all history" action was used. Total count only. |
-  | `app_lock_triggered` | The biometric unlock prompt was shown. |
-  | `screen_view` | Automatic — fires each time you open a screen in the app. |
+**We do NOT request App Tracking Transparency permission.** Firebase Analytics, as we use it, does not collect your advertising identifier (IDFA) and cannot link you across other apps or websites.
 
 **What we do NOT send:** the contents of any QR or barcode (scanned or created), the text of your notes, the names of your folders or templates, the contents of your photo library, any image bytes, any passwords, or any Wi-Fi credentials.
 
@@ -90,13 +71,15 @@ We use two Firebase services from Google to improve the app: **Analytics** and *
 - **Firebase Analytics** tells us which features are actually being used. We look at aggregate counts — not at individual users. The goal is to decide what to improve and what to remove.
 - **Firebase Crashlytics** tells us when and why the app crashes so we can fix the underlying bug.
 
-We do not sell your data. We do not share it with advertisers. We do not use it to build profiles across other apps.
+We do not sell your personal information, and we do not share it for cross-context behavioral advertising (as those terms are defined under the California Consumer Privacy Act). We do not share data with advertisers, and we do not build profiles across other apps.
 
 ---
 
 ## 5. Third parties
 
-The only third-party service the app communicates with is **Firebase**, operated by Google LLC. Google processes Analytics and Crashlytics data as our service provider, under the [Firebase Data Processing Terms](https://firebase.google.com/terms/data-processing-terms). Google's own privacy practices are covered by the [Google Privacy Policy](https://policies.google.com/privacy).
+The only third-party service the app communicates with is **Firebase**, operated by Google LLC. Google processes Analytics and Crashlytics data as our service provider, under the [Firebase Data Processing and Security Terms](https://firebase.google.com/terms/data-processing-terms). Google's own privacy practices are covered by the [Google Privacy Policy](https://policies.google.com/privacy).
+
+Google primarily processes this data on servers located in the **United States**. For users in the EEA, UK, or Switzerland, international transfers rely on Google's Data Processing and Security Terms, which incorporate the European Commission's Standard Contractual Clauses and the UK International Data Transfer Addendum.
 
 No other third-party analytics, advertising, or tracking SDK is bundled in the app.
 
@@ -116,6 +99,7 @@ No other third-party analytics, advertising, or tracking SDK is bundled in the a
 - **Turn off analytics system-wide** — iOS **Settings → Privacy & Security → Analytics & Improvements → Share iPhone Analytics**. When this is off, Firebase still receives minimal crash data; you can prevent even that by uninstalling the app.
 - **Access or erase your data** under GDPR (EEA, UK), CCPA/CPRA (California), or similar laws — email **hadi.fiftytwo@gmail.com**. Because we don't tie analytics data to a persistent identity, the most reliable erasure is uninstalling the app, which invalidates the Firebase installation ID.
 - **Opt out of analytics inside the app** — not currently available as a per-app toggle. If you'd like one, email us and we'll prioritize it.
+- **Lodge a complaint** — if you're in the EEA, UK, or Switzerland and believe we're mishandling your data, you have the right to complain to your local data protection authority. We'd appreciate the chance to address your concern first — email **hadi.fiftytwo@gmail.com** and we'll respond within 30 days.
 
 ---
 
