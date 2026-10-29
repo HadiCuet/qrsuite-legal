@@ -123,33 +123,34 @@
 <main>
 
 <h1>QRsuite — Privacy Policy</h1>
-<p class="effective"><strong>Effective date:</strong> April 19, 2026</p>
+<p class="effective"><strong>Effective date:</strong> October 29, 2026</p>
 <p class="intro">This policy explains what data QRsuite collects, why, and the choices you have. It is written in plain English on purpose — you should be able to read it in a few minutes.</p>
 
 <hr>
 
 <h2>1. Who we are</h2>
-<p>QRsuite is an iOS app for scanning and generating QR codes and barcodes. It is developed and operated by <strong>Abdullah Al Hadi</strong> ("we", "us"). For the purposes of the EU / UK / EEA General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA/CPRA), Abdullah Al Hadi is the <strong>data controller</strong> for personal data collected through the QRsuite app. For any privacy questions, contact us at <strong>hadi.fiftytwo@gmail.com</strong>.</p>
+<p>QRsuite is an iOS app for scanning and generating QR codes and barcodes, and printing labels. It is developed and operated by <strong>Abdullah Al Hadi</strong> ("we", "us"). For the purposes of the EU / UK / EEA General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA/CPRA), Abdullah Al Hadi is the <strong>data controller</strong> for personal data collected through the QRsuite app. For any privacy questions, contact us at <strong>hadi.fiftytwo@gmail.com</strong>.</p>
 <p>This policy covers the QRsuite iOS app and its bundled extensions (Widget and Share Extension).</p>
 
 <hr>
 
 <h2>2. Data we collect</h2>
-
-<h3>Stays only on your device — never sent anywhere</h3>
-<p>Everything below is stored locally on your device using Apple's SwiftData framework. If you have iCloud Backup enabled on your iPhone, Apple includes this data in your encrypted iCloud backup — that backup is between you and Apple; we have no access to it.</p>
+<h3>Stored on your device</h3>
+<p>Everything below is stored locally on your device using Apple's SwiftData framework. By default none of it leaves your device, and we cannot see it.</p>
 <ul>
-  <li><strong>Scan history</strong> — every QR or barcode you scan, including the decoded text, timestamp, and any folder, note, or favorite flag you attach to it.</li>
-  <li><strong>Created QRs</strong> — QRs you generate, with their design settings and thumbnails.</li>
-  <li><strong>Saved templates</strong> — designs you save to reuse later.</li>
+  <li><strong>Scan history</strong> — every QR or barcode you scan, including the decoded text, timestamp, scan count, and any folder, note, or favorite flag you attach to it. You can pause saving new scans in Settings.</li>
+  <li><strong>Created QRs</strong> — QRs and barcodes you generate, with their design settings and thumbnails.</li>
+  <li><strong>Saved templates, saved batches, label sheets and Brand Kit</strong> — designs, label runs, sheets and brand colors and logo you save to reuse later.</li>
   <li><strong>Folders and notes</strong> — organizational data you add yourself.</li>
-  <li><strong>Preferences</strong> — your settings (theme, App Lock on/off, etc.), stored in iOS user defaults.</li>
+  <li><strong>Preferences</strong> — your settings (theme, App Lock on/off, label defaults, etc.), stored in iOS user defaults.</li>
 </ul>
-<p>You can delete any of this at any time from within the app (swipe-to-delete, bulk-delete, or Settings → "Clear all history"). Uninstalling the app removes all of it.</p>
-
+<p>You can delete any of this at any time from within the app: swipe-to-delete, <strong>Settings → Clear scan history</strong>, or <strong>Settings → Delete all data</strong>, which removes everything listed here except your settings (theme, App Lock, scan settings and the like), including your iCloud copy. Uninstalling the app removes the local copy. If you have iCloud Backup enabled on your iPhone, Apple includes the app's data in your encrypted iCloud backup — that backup is between you and Apple.</p>
+<h3>Sent to iCloud, only if you turn on iCloud Sync</h3>
+<p>iCloud Sync is an optional Pro feature and is off until you turn it on in Settings. When it is on, your scan history, created QRs, folders, notes and saved templates are also stored in your <strong>private iCloud (Apple CloudKit) database</strong>, tied to your Apple Account, so they stay in sync across your devices. That data is held and protected by Apple; we do not receive it and cannot access it. Turning sync off stops further uploads. <strong>Settings → Delete all data</strong> also deletes the iCloud copy.</p>
+<h3>Backup files</h3>
+<p><strong>Settings → Back up everything</strong> creates one file with your data. It is saved or shared only where you choose to send it; we never receive it.</p>
 <h3>Sent to Firebase (Google)</h3>
-<p>We use two Firebase services from Google to improve the app: <strong>Analytics</strong> and <strong>Crashlytics</strong>. Both are configured with the minimum data surface needed for product decisions and crash fixing — no advertising identifiers, no cross-app tracking.</p>
-
+<p>We use three Firebase services from Google: <strong>Analytics</strong>, <strong>Crashlytics</strong> and <strong>Remote Config</strong>. They are always on in this version of the app; there is no in-app switch to turn them off. They are configured with the minimum data surface needed for product decisions and crash fixing — no advertising identifiers, no cross-app tracking.</p>
 <p><strong>Firebase Analytics</strong> collects:</p>
 <ul>
   <li>Device identifiers scoped to this app only (Apple's IDFV, a Firebase installation ID). These cannot identify you across other apps.</li>
@@ -157,19 +158,21 @@
   <li>Which screens you view in the app.</li>
   <li>Aggregate feature usage, so we can decide what to keep, fix, or cut:
     <ul>
-      <li>The <em>type</em> of code you scan or create (URL, Wi-Fi, text, etc.) — never the content</li>
-      <li>Actions you take on a scan result (open, copy, share, add to contacts, etc.) — action name only</li>
-      <li>Which Pro-only features you attempt and which subscription plan you consider</li>
-      <li>Counts of operations on history, folders, templates, and notes (created, edited, deleted) — never the names or contents</li>
-      <li>Whether a scan or render attempt failed, with a generic reason (e.g. "no barcode found")</li>
+  <li>The <em>type</em> of code you scan or create (URL, Wi-Fi, text, etc.) — never the content</li>
+  <li>Actions you take on a scan result (open, copy, share, add to contacts, etc.) — action name only</li>
+  <li>Which Pro-only features you attempt and which subscription plan you consider</li>
+  <li>Purchases you make in the app: the product, its price and currency, and whether it is a subscription. Apple handles the payment; we never see your payment details or your Apple Account</li>
+  <li>Your current plan (free, monthly, yearly or lifetime)</li>
+  <li>The choices you make during onboarding, and which Siri or Shortcuts actions you run — the option or action name only</li>
+  <li>Counts of operations on history, folders, templates, and notes (created, edited, deleted) — never the names or contents</li>
+  <li>Which settings you change (for example App Lock or iCloud Sync on or off) — the setting name and its new value only</li>
+  <li>Whether a scan or render attempt failed, with a generic reason (e.g. "no barcode found")</li>
     </ul>
   </li>
 </ul>
-
 <p><strong>We do NOT request App Tracking Transparency permission.</strong> Firebase Analytics, as we use it, does not collect your advertising identifier (IDFA) and cannot link you across other apps or websites.</p>
-
-<p><strong>What we do NOT send:</strong> the contents of any QR or barcode (scanned or created), the text of your notes, the names of your folders or templates, the contents of your photo library, any image bytes, any passwords, or any Wi-Fi credentials.</p>
-
+<p><strong>What we do NOT send to Firebase:</strong> the contents of any QR or barcode (scanned or created), the text of your notes, the names of your folders or templates, the contents of your photo library, any image bytes, any passwords, or any Wi-Fi credentials.</p>
+<p><strong>Firebase Remote Config</strong> lets us change a few app settings without an update, such as whether the one-time lifetime offer is shown and how long it lasts. To fetch them, the app sends its Firebase installation ID, app version and your device's language and region. It sends no usage data.</p>
 <p><strong>Firebase Crashlytics</strong> collects data only when the app crashes:</p>
 <ul>
   <li>Stack traces from the crash.</li>
@@ -177,16 +180,18 @@
   <li>Breadcrumbs — short text messages we log as you use the app (e.g. "opened Design screen") to help us reproduce the crash. These never contain QR payloads, notes, or personal content.</li>
   <li>Non-fatal errors explicitly reported by the app (e.g. "QR render failed").</li>
 </ul>
-
+<h3>Sent to Open Food Facts, only when you tap "Look up product"</h3>
+<p>On a scanned retail barcode (EAN or UPC) you can tap <strong>Look up product</strong>. Only then, QRsuite sends that barcode number to <strong>Open Food Facts</strong> (openfoodfacts.org), a community product database, and shows what it returns. Like any web request, this also reveals your <strong>IP address</strong> to Open Food Facts. The lookup is never automatic, never runs for batch scans or history, and we do not store the result. Open Food Facts handles the request under its own <a href="https://world.openfoodfacts.org/privacy">privacy policy</a>.</p>
 <hr>
 
 <h2>3. Permissions the app asks for</h2>
 <ul>
   <li><strong>Camera</strong> — required to scan codes in real time. Frames are processed on-device by Apple's Vision framework. Camera frames are never stored and never transmitted.</li>
-  <li><strong>Photo Library</strong> — optional. Used only when you tap the gallery picker to scan a photo. We read only the image(s) you explicitly select. Nothing is uploaded.</li>
+  <li><strong>Photo Library</strong> — optional. Used only when you tap the gallery picker to scan a photo, or to save a code you created. We read only the image(s) you explicitly select. Nothing is uploaded.</li>
   <li><strong>Face ID / Touch ID / passcode</strong> — optional, only used when App Lock is enabled. The check happens locally via Apple's LocalAuthentication framework. Your biometric data never leaves your device and is never seen by the app.</li>
+  <li><strong>Location</strong> — optional, only when you create a Location QR. It fills in the coordinates of that code on your device.</li>
+  <li><strong>Contacts and Calendar</strong> — optional, only to add a scanned contact or event when you choose to save it.</li>
 </ul>
-
 <hr>
 
 <h2>4. How we use this data</h2>
@@ -194,36 +199,41 @@
   <li><strong>Local data</strong> (scan history, templates, etc.) powers the app's features for you — searching your own history, reusing a created QR, etc. It is not used for anything else.</li>
   <li><strong>Firebase Analytics</strong> tells us which features are actually being used. We look at aggregate counts — not at individual users. The goal is to decide what to improve and what to remove.</li>
   <li><strong>Firebase Crashlytics</strong> tells us when and why the app crashes so we can fix the underlying bug.</li>
+  <li><strong>Firebase Remote Config</strong> delivers app settings, such as whether the lifetime offer is on.</li>
 </ul>
 <p>We do not sell your personal information, and we do not share it for cross-context behavioral advertising (as those terms are defined under the California Consumer Privacy Act). We do not share data with advertisers, and we do not build profiles across other apps.</p>
 
 <hr>
 
 <h2>5. Third parties</h2>
-<p>The only third-party service the app communicates with is <strong>Firebase</strong>, operated by Google LLC. Google processes Analytics and Crashlytics data as our service provider, under the <a href="https://firebase.google.com/terms/data-processing-terms">Firebase Data Processing and Security Terms</a>. Google's own privacy practices are covered by the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
-<p>Google primarily processes this data on servers located in the <strong>United States</strong>. For users in the EEA, UK, or Switzerland, international transfers rely on Google's Data Processing and Security Terms, which incorporate the European Commission's Standard Contractual Clauses and the UK International Data Transfer Addendum.</p>
+<p>The services the app communicates with are:</p>
+<ul>
+  <li><strong>Firebase</strong>, operated by Google LLC — Analytics, Crashlytics and Remote Config, as described above. Google processes this data as our service provider, under the <a href="https://firebase.google.com/terms/data-processing-terms">Firebase Data Processing and Security Terms</a>. Google's own privacy practices are covered by the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</li>
+  <li><strong>Apple</strong> — App Store purchases and subscriptions (we never see your payment details), and iCloud (CloudKit) if you turn on iCloud Sync. Apple's practices are covered by the <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a>.</li>
+  <li><strong>Open Food Facts</strong> — only when you tap <strong>Look up product</strong>, as described above.</li>
+</ul>
+<p>Google primarily processes Firebase data on servers located in the <strong>United States</strong>. For users in the EEA, UK, or Switzerland, international transfers rely on Google's Data Processing and Security Terms, which incorporate the European Commission's Standard Contractual Clauses and the UK International Data Transfer Addendum.</p>
 <p>No other third-party analytics, advertising, or tracking SDK is bundled in the app.</p>
-
 <hr>
 
 <h2>6. How long we keep it</h2>
 <ul>
   <li><strong>Local data</strong> — kept on your device until you delete it or uninstall the app.</li>
+  <li><strong>iCloud copy</strong> — kept in your private iCloud until you delete it with <strong>Settings → Delete all data</strong> or remove it in iOS Settings → your name → iCloud → Manage Storage.</li>
   <li><strong>Firebase Analytics</strong> — Google retains event-level data for <strong>14 months</strong> (Firebase's default), after which older events are aggregated or dropped.</li>
   <li><strong>Firebase Crashlytics</strong> — Google retains crash reports for <strong>90 days</strong>.</li>
+  <li><strong>Open Food Facts</strong> — we keep nothing; the request is handled by Open Food Facts under its own policy.</li>
 </ul>
-
 <hr>
 
 <h2>7. Your rights and choices</h2>
 <ul>
-  <li><strong>Delete your history</strong> at any time — swipe-to-delete, bulk-delete, or <strong>Settings → Clear all history</strong>.</li>
-  <li><strong>Turn off analytics system-wide</strong> — iOS <strong>Settings → Privacy &amp; Security → Analytics &amp; Improvements → Share iPhone Analytics</strong>. When this is off, Firebase still receives minimal crash data; you can prevent even that by uninstalling the app.</li>
-  <li><strong>Access or erase your data</strong> under GDPR (EEA, UK), CCPA/CPRA (California), or similar laws — email <strong>hadi.fiftytwo@gmail.com</strong>. Because we don't tie analytics data to a persistent identity, the most reliable erasure is uninstalling the app, which invalidates the Firebase installation ID.</li>
-  <li><strong>Opt out of analytics inside the app</strong> — not currently available as a per-app toggle. If you'd like one, email us and we'll prioritize it.</li>
+  <li><strong>Delete your data</strong> at any time — swipe-to-delete, <strong>Settings → Clear scan history</strong>, or <strong>Settings → Delete all data</strong>, which also deletes your iCloud copy.</li>
+  <li><strong>Take your data with you</strong> — <strong>Settings → Back up everything</strong> exports it to one file, and <strong>Export history as CSV</strong> (Pro) exports your scans and created codes.</li>
+  <li><strong>Analytics and crash reports</strong> — they are always on and there is no in-app switch. The iPhone <strong>Analytics &amp; Improvements → Share iPhone Analytics</strong> setting in iOS does <strong>not</strong> control them. You can stop them by uninstalling the app, which also invalidates the Firebase installation ID.</li>
+  <li><strong>Access or erase your data</strong> under GDPR (EEA, UK), CCPA/CPRA (California), or similar laws — email <strong>hadi.fiftytwo@gmail.com</strong>. Because we don't tie analytics data to a persistent identity, the most reliable erasure is uninstalling the app.</li>
   <li><strong>Lodge a complaint</strong> — if you're in the EEA, UK, or Switzerland and believe we're mishandling your data, you have the right to complain to your local data protection authority. We'd appreciate the chance to address your concern first — email <strong>hadi.fiftytwo@gmail.com</strong> and we'll respond within 30 days.</li>
 </ul>
-
 <hr>
 
 <h2>8. Children's privacy</h2>
@@ -233,11 +243,10 @@
 
 <h2>9. Security</h2>
 <ul>
-  <li>Local data is stored using iOS's standard app sandbox protections. If you enable App Lock, it's additionally gated behind Face ID / Touch ID / passcode.</li>
-  <li>Data sent to Firebase travels over HTTPS (TLS).</li>
+  <li>Local data is stored using iOS's standard app sandbox protections. If you enable App Lock, it's additionally gated behind Face ID / Touch ID / passcode, and the lock covers the whole app, including the app switcher.</li>
+  <li>Data sent to Firebase and Open Food Facts travels over HTTPS (TLS). iCloud data is protected by Apple.</li>
   <li>We cannot guarantee perfect security — no one can. If we become aware of a breach that affects your data, we will notify you as required by applicable law.</li>
 </ul>
-
 <hr>
 
 <h2>10. Changes to this policy</h2>
@@ -249,7 +258,7 @@
 <p>Questions, requests, or complaints: <strong>hadi.fiftytwo@gmail.com</strong>.</p>
 
 <footer>
-  © Abdullah Al Hadi. Last updated April 19, 2026.
+  © Abdullah Al Hadi. Last updated October 28, 2026.
 </footer>
 
 </main>
